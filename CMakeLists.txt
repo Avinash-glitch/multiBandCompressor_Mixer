@@ -63,6 +63,13 @@ cmake_dependent_option(JUCE_ENABLE_MODULE_SOURCE_GROUPS
 
 add_subdirectory(modules)
 
+add_subdirectory(pybind11)
+
+# Add pybind11 include path
+target_include_directories(MyJuceProject PRIVATE ${CMAKE_SOURCE_DIR}/pybind11/pybind11/include)
+
+
+
 if(JUCE_MODULES_ONLY)
     return()
 endif()
